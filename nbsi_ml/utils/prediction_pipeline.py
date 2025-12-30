@@ -186,7 +186,8 @@ class PredictionPipeline:
                     'lower_95': pred_lower,
                     'upper_95': pred_upper
                 }
-        except:
+        except (AttributeError, ValueError, IndexError) as e:
+            # If confidence intervals not available, continue to return just predictions
             pass
         
         # If confidence intervals not available, return just predictions

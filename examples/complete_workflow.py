@@ -34,6 +34,7 @@ def main():
     print("=" * 80)
     
     # Create output directories
+    ensure_directory("./data")
     ensure_directory("./results")
     ensure_directory("./results/plots")
     ensure_directory("./results/models")
@@ -235,8 +236,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # Create data directory
-    ensure_directory("./data")
-    
     # Run main workflow
     main()

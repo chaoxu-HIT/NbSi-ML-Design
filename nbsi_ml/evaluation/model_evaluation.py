@@ -43,7 +43,7 @@ class ModelEvaluator:
         # Calculate MAPE if no zeros in y_true
         try:
             mape = mean_absolute_percentage_error(y_true, y_pred)
-        except:
+        except (ZeroDivisionError, ValueError):
             mape = None
         
         metrics = {
